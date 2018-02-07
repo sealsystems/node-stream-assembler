@@ -1,19 +1,19 @@
-# @sealsystems/node-stream-assembler
+# @sealsystems/stream-assembler
 
 Assemble data from multiple read streams into a single write stream.
 
 ## Installation
 
 ```bash
-npm install @sealsystems/node-stream-assembler
+npm install @sealsystems/stream-assembler
 ```
 
 ## Quick start
 
-First you need to add a reference to `@sealsystems/node-stream-assembler` within your application.
+First you need to add a reference to `@sealsystems/stream-assembler` within your application.
 
 ```javascript
-const Assembler = require('@sealsystems/node-stream-assembler');
+const Assembler = require('@sealsystems/stream-assembler');
 ```
 
 Then you can create an assembler object.
