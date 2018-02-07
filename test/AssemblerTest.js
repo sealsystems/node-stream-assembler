@@ -94,4 +94,17 @@ suite('Assembler', () => {
       await assembler.pipe(writeable);
     }).is.throwingAsync('hugos error');
   });
+
+  test('throws error from writeable stream', async () => {
+    const readables = [new PassThrough()];
+    const writeable = new PassThrough();
+    const assembler = new Assembler(readables);
+
+    setTimeout(() => {
+      writeable.emit('error', new Error('hansis error'));
+    }, 150);
+    await assert.that(async () => {
+      await assembler.pipe(writeable);
+    }).is.throwingAsync('hansis error');
+  });
 });
