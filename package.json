@@ -1,6 +1,6 @@
 {
   "name": "@sealsystems/node-stream-assembler",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Assemble data from multiple read streams into a single write stream.",
   "author": {
     "name": "SEAL Systems AG",
