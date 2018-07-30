@@ -10,11 +10,11 @@
   "license": "MIT",
   "scripts": {
     "bot": "bot",
-    "release": "bot release && npm publish",
-    "release-minor": "bot release --type minor && npm publish",
-    "release-major": "bot release --type major && npm publish",
-    "test": "bot test-units",
-    "coverage": "istanbul cover _mocha -- --recursive --ui tdd ",
+    "release": "npm run bot release && npm publish",
+    "release-minor": "npm run bot release --type minor && npm publish",
+    "release-major": "npm run bot release --type major && npm publish",
+    "test": "npm run bot test-units",
+    "coverage": "nyc --reporter=text --reporter=lcov mocha",
     "report": "npm run coverage && if [[ $OSTYPE == darwin* ]]; then open=open; else open=xdg-open; fi && $open coverage/lcov-report/index.html"
   },
   "main": "lib/Assembler.js",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@sealsystems/eslint-config-es": "1.1.1",
     "assertthat": "0.11.0",
+    "nyc": "12.0.2",
     "roboter": "0.15.6",
     "roboter-server": "0.15.6"
   },
