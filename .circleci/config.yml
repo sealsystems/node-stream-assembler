@@ -6,44 +6,38 @@
 version: 2
 
 jobs:
-  build:
-    machine: true
-
-    environment:
-      NODE_VERSION: 8.9.4
+  test:
+    docker:
+      - image: circleci/node:8.9.4
 
     steps:
       - checkout
-
-      # Prepare
-
-      - run:
-          name: Configure NVM
-          command: echo '. ${NVM_DIR}/nvm.sh' >> $BASH_ENV
-      - run:
-          name: Configure Node.js
-          command: |
-            nvm install ${NODE_VERSION}
-            nvm alias default ${NODE_VERSION}
-            node --version
-
-      # Dependencies
-
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: Install Roboter CLI
-          command: npm install roboter-cli
-      - run:
           name: Install dependencies
-          command: npm install
+          command: |
+            if [ ! -d ./node_modules ]; then
+              npm install
+              npm install --no-save roboter-cli
+            fi
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-
-      # Test
-
       - run:
           name: Run tests
           command: npm run bot
+      - run:
+          name: Run code coverage
+          command: npm run coverage
+      - store_artifacts:
+          path: coverage/lcov-report
+          destination: coverage
+
+workflows:
+  version: 2
+
+  test:
+    jobs:
+      - test
