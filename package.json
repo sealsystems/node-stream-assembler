@@ -19,7 +19,7 @@
   "dependencies": {},
   "devDependencies": {
     "@sealsystems/eslint-config-es": "1.1.1",
-    "assertthat": "0.11.0",
+    "assertthat": "4.0.2",
     "nyc": "14.1.1",
     "roboter": "0.15.6",
     "roboter-server": "0.16.0"
