@@ -10,22 +10,30 @@
   "license": "MIT",
   "scripts": {
     "bot": "bot",
-    "release": "semantic-release --branch ${CIRCLE_BRANCH}",
-    "test": "npm run bot test-units",
-    "coverage": "nyc --reporter=text --reporter=lcov mocha",
-    "report": "npm run coverage && if [[ $OSTYPE == darwin* ]]; then open=open; else open=xdg-open; fi && $open coverage/lcov-report/index.html"
+    "release": "release",
+    "test": "test-run",
+    "lint": "lint",
+    "lint:fix": "lint-fix",
+    "test:coverage": "test-coverage",
+    "test:coverage:check": "test-coverage-check",
+    "test:report": "test-report",
+    "licenses": "license-checker --production --csv"
   },
   "main": "lib/Assembler.js",
   "dependencies": {},
   "devDependencies": {
-    "@sealsystems/eslint-config-es": "1.1.1",
-    "assertthat": "0.11.0",
-    "nyc": "12.0.2",
-    "roboter": "0.15.6",
-    "roboter-server": "0.15.6"
+    "@sealsystems/eslint-config-es": "3.5.4",
+    "@sealsystems/mocha": "4.1.1",
+    "@sealsystems/semantic-release": "4.0.12"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/sealsystems/node-stream-assembler.git"
+  },
+  "release": {
+    "extends": "@sealsystems/semantic-release/node-module"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
