@@ -31,17 +31,21 @@ suite('Assembler', () => {
 
   test('throws error readables argument is missing', async () => {
     /* eslint-disable no-new */
-    assert.that(() => {
-      new Assembler();
-    }).is.throwing('Readables are missing.');
+    assert
+      .that(() => {
+        new Assembler();
+      })
+      .is.throwing('Readables are missing.');
     /* eslint-enable no-new */
   });
 
   test('throws error if wrong argument type is given', async () => {
     /* eslint-disable no-new */
-    assert.that(() => {
-      new Assembler({});
-    }).is.throwing('Argument error. Function expected, but got object.');
+    assert
+      .that(() => {
+        new Assembler({});
+      })
+      .is.throwing('Argument error. Function expected, but got object.');
     /* eslint-enable no-new */
   });
 
@@ -64,9 +68,11 @@ suite('Assembler', () => {
   test('throws error if writeable is missing', async () => {
     const assembler = new Assembler([]);
 
-    await assert.that(async () => {
-      await assembler.pipe();
-    }).is.throwingAsync('Writeable stream is missing.');
+    await assert
+      .that(async () => {
+        await assembler.pipe();
+      })
+      .is.throwingAsync('Writeable stream is missing.');
   });
 
   test('pipes content to writeable stream', async () => {
@@ -90,9 +96,11 @@ suite('Assembler', () => {
     setTimeout(() => {
       readables[0].emit('error', new Error('hugos error'));
     }, 150);
-    await assert.that(async () => {
-      await assembler.pipe(writeable);
-    }).is.throwingAsync('hugos error');
+    await assert
+      .that(async () => {
+        await assembler.pipe(writeable);
+      })
+      .is.throwingAsync('hugos error');
   });
 
   test('throws error from writeable stream', async () => {
@@ -103,8 +111,10 @@ suite('Assembler', () => {
     setTimeout(() => {
       writeable.emit('error', new Error('hansis error'));
     }, 150);
-    await assert.that(async () => {
-      await assembler.pipe(writeable);
-    }).is.throwingAsync('hansis error');
+    await assert
+      .that(async () => {
+        await assembler.pipe(writeable);
+      })
+      .is.throwingAsync('hansis error');
   });
 });
