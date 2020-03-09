@@ -1,3 +1,14 @@
+## 1.1.1 (2020-03-09)
+
+### Chores
+
+
+#### Swichted to github-actions. ([823cf4b](https://github.com/sealsystems/node-stream-assembler/commit/823cf4b))
+
+
+
+---
+
 ## 1.1.0 (2019-10-14)
 
 ### Features

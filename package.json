@@ -1,6 +1,6 @@
 {
   "name": "@sealsystems/stream-assembler",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Assemble data from multiple read streams into a single write stream.",
   "author": {
     "name": "SEAL Systems AG",
