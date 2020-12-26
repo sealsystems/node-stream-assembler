@@ -1,3 +1,12 @@
+## 1.1.3 (2020-12-26)
+
+### Chores
+
+
+Update build configuration ([9d2b545](https://github.com/sealsystems/node-stream-assembler/commit/9d2b545))
+
+Update build configuration ([157eaa1](https://github.com/sealsystems/node-stream-assembler/commit/157eaa1))
+
 ## 1.1.2 (2020-12-21)
 
 ### Chores
