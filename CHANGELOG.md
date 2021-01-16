@@ -1,3 +1,10 @@
+## 1.1.4 (2021-01-16)
+
+### Chores
+
+
+Update build config ([3bcbfb1](https://github.com/sealsystems/node-stream-assembler/commit/3bcbfb1))
+
 ## 1.1.3 (2020-12-26)
 
 ### Chores
