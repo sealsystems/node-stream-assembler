@@ -22,7 +22,7 @@
   "main": "lib/Assembler.js",
   "devDependencies": {
     "@sealsystems/eslint-config-es": "3.6.7",
-    "@sealsystems/mocha": "4.1.9",
+    "@sealsystems/mocha": "4.1.10",
     "@sealsystems/semantic-release": "4.3.4"
   },
   "repository": {
