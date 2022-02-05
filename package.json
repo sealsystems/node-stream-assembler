@@ -21,8 +21,8 @@
   },
   "main": "lib/Assembler.js",
   "devDependencies": {
-    "@sealsystems/eslint-config-es": "3.7.5",
-    "@sealsystems/mocha": "4.2.2"
+    "@sealsystems/eslint-config-es": "3.7.6",
+    "@sealsystems/mocha": "4.2.3"
   },
   "repository": {
     "type": "git",
